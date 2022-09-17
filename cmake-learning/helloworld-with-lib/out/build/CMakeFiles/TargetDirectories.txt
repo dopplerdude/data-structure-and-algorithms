@@ -1,0 +1,6 @@
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/out/build/CMakeFiles/rebuild_cache.dir
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/out/build/CMakeFiles/edit_cache.dir
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/out/build/CMakeFiles/helloworld.dir
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/out/build/swapper/CMakeFiles/rebuild_cache.dir
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/out/build/swapper/CMakeFiles/edit_cache.dir
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/out/build/swapper/CMakeFiles/swapper.dir

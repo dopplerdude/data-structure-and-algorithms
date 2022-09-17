@@ -1,0 +1,3 @@
+/home/eaton/git/temp/cmake-learning/helloworld/out/build/CMakeFiles/rebuild_cache.dir
+/home/eaton/git/temp/cmake-learning/helloworld/out/build/CMakeFiles/edit_cache.dir
+/home/eaton/git/temp/cmake-learning/helloworld/out/build/CMakeFiles/helloworld.dir

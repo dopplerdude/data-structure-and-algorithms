@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/main.cpp
+iostream
+-
+swapper/swapper.h
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/swapper/swapper.h
+
+/home/eaton/git/temp/cmake-learning/helloworld-with-lib/swapper/swapper.h
+

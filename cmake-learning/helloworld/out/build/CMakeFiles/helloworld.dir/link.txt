@@ -1,0 +1,1 @@
+/opt/rh/devtoolset-9/root/usr/bin/c++     CMakeFiles/helloworld.dir/main.cpp.o CMakeFiles/helloworld.dir/foo.cpp.o  -o helloworld 
