@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "queue.h"
 #include <string.h>
 
@@ -10,14 +11,15 @@ queue_handle_t create_queue(int32_t max_queue_len)
 	queue_handle->size = 0;
 	queue_handle->head = queue_handle->capacity;
 	queue_handle->tail = 0;
-	queue_handle->p_data = malloc(sizeof(void*) * queue_handle->capacity);
+	queue_handle->p_data = (void**)malloc(sizeof(void*) * queue_handle->capacity);
 	assert(queue_handle->p_data != NULL);
 	memset(queue_handle->p_data, 0, sizeof(void*) * queue_handle->capacity);
 	return(queue_handle);
 }
 
-status_t queue_delete(queue_handle_t queue_handle)
+status_t queue_delete(queue_handle_t* p_queue_handle)
 {
+	queue_handle_t queue_handle = *p_queue_handle;
 	if(queue_handle != NULL);
 	{
 		if(queue_handle->p_data != NULL)
@@ -32,9 +34,12 @@ status_t queue_delete(queue_handle_t queue_handle)
 			}
 
 			free(queue_handle->p_data);
+			queue_handle->p_data = NULL;
 		}
 		free(queue_handle);
+		queue_handle = NULL;
 	}
+	return(SUCCESS);
 }
 
 status_t queue_push(queue_handle_t queue_handle, void* p_data, size_t size_in_bytes)
@@ -53,7 +58,7 @@ void* get_data(void* p_data, size_t size_in_bytes)
 {
 	void* data = malloc(size_in_bytes);
 	assert(data != NULL);
-	memset(data, p_data, size_in_bytes);
+	strncpy(data, p_data, size_in_bytes);
 	return(data);
 }
 
@@ -66,7 +71,7 @@ status_t queue_pop(queue_handle_t queue_handle, void* p_data, size_t size_in_byt
 	assert(p_data != NULL);
 
 	queue_handle->head = queue_handle->head % queue_handle->capacity;
-	memset(p_data, queue_handle->p_data[queue_handle->head], size_in_bytes);
+	strncpy(p_data, queue_handle->p_data[queue_handle->head++], size_in_bytes);
 	return(SUCCESS);
 }
 
