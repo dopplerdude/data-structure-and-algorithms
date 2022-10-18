@@ -28,8 +28,8 @@ typedef enum boolean_type
 
 #ifdef assert
 #undef assert
-#define assert( x ) 	if(( x ) == FALSE) {for( ;; );}
 #endif
+#define assert( x ) 	if(( x ) == FALSE) {for( ;; );}
 
 my_queue_handle_t create_my_queue(int32_t max_my_queue_len);
 status_t my_queue_push(my_queue_handle_t my_queue_handle, void* p_data, size_t size_in_bytes);
