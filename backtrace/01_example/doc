@@ -1,0 +1,23 @@
+/*
+	Doc:
+			https://man7.org/linux/man-pages/man3/backtrace.3.html
+            https://stackoverflow.com/questions/36692315/what-exactly-does-rdynamic-do-and-when-exactly-is-it-needed
+
+	
+	Compile command:
+			gcc -rdynamic backtrace.c -o bt
+	
+	-rdynamic:
+			Pass the flag -export-dynamic to the ELF linker, on targets that support it. This instructs the linker to add all symbols, not only used ones, to the dynamic symbol table. This option is needed for some uses of dlopen or to allow obtaining backtraces from within a program.
+	
+	
+
+Keys:
+==========================================
+_LINKER_
+_RDYNAMIC_
+_STACKTRACE_
+_TRACE_
+_BACKTRACE_
+_BT_
+

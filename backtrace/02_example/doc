@@ -1,0 +1,36 @@
+https://stackoverflow.com/questions/36692315/what-exactly-does-rdynamic-do-and-when-exactly-is-it-needed
+
+Here, bar.c becomes a shared library libbar.so and main.c becomes a program that dlopens libbar and calls bar() from that library. bar() calls foo(), which is external in bar.c and defined in main.c.
+
+So, without -rdynamic:
+
+
+$ make test
+gcc -c -Wall -o main.o main.c
+gcc -c -Wall -fpic -o bar.o bar.c
+gcc -shared -o libbar.so bar.o
+gcc  -o prog main.o -L. -lbar -ldl
+./prog
+./libbar.so: undefined symbol: foo
+Makefile:23: recipe for target 'test' failed
+And with -rdynamic:
+
+$ make clean
+rm -f *.o *.so prog
+$ make test LDEXTRAFLAGS=-rdynamic
+gcc -c -Wall -o main.o main.c
+gcc -c -Wall -fpic -o bar.o bar.c
+gcc -shared -o libbar.so bar.o
+gcc -rdynamic -o prog main.o -L. -lbar -ldl
+./prog
+Hello world
+
+
+Keys:
+==========================================
+_LINKER_
+_RDYNAMIC_
+_MAKEFILE_
+_LD_LIBRAY_PATH_
+_LIBRARY_
+_DYNAMIC_LIBRARY_
